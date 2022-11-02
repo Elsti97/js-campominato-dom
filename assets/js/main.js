@@ -56,17 +56,14 @@ function play(){
       if (arrayBombe.includes(numBomba)) {
         this.classList.add("bomba");
         punteggi.innerHTML = ("Hai perso");
-
+        alert(`Hai perso, il tuo punteggio è ${somma}`);
+        location.reload();
       } else {
         somma ++;
         punteggi.innerHTML = (`Il tuo punteggio è ${somma}`);
       }
     })
-
     griglia.append(elementoCorrente);
   }
-
-
-
 }
 
