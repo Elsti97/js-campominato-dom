@@ -11,7 +11,10 @@
 const griglia = document.getElementById("griglia");
 console.log(griglia);
 
+let punteggi = document.getElementById("punti");
+
 let arrayBombe = [];
+const punteggio = 0;
 
 for( let k = 0; k < 16; k++){
   let numeroRandom = Math.round(Math.random() * (100 - 1 + 1)) + 1;
@@ -31,6 +34,7 @@ function play(){
   function creazioneQuadrato(){
     const div = document.createElement("div");
     div.classList.add("quadrato");
+
     return div;
   }
 
@@ -45,7 +49,18 @@ function play(){
 
     elementoCorrente.addEventListener('click', function(){
       console.log(this);
-      this.classList.toggle('active');
+      this.classList.add('active');
+
+      let numBomba = parseInt(this.innerText);
+
+      if (arrayBombe.includes(numBomba)) {
+        this.classList.add("bomba");
+        punteggi.innerHTML = ("Hai perso");
+
+      } else {
+        somma ++;
+        punteggi.innerHTML = (`Il tuo punteggio è ${somma}`);
+      }
     })
 
     griglia.append(elementoCorrente);

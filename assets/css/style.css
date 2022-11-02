@@ -31,6 +31,12 @@ main{
   color: white;
 }
 
+.bomba{
+  display: flex;
+  background-color: red;
+  color: white;
+}
+
 .fa-heart{
   color: black;
 }
