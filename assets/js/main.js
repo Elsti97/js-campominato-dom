@@ -11,11 +11,23 @@
 const griglia = document.getElementById("griglia");
 console.log(griglia);
 
+let arrayBombe = [];
+
+for( let k = 0; k < 16; k++){
+  let numeroRandom = Math.round(Math.random() * (100 - 1 + 1)) + 1;
+  if( arrayBombe.includes(numeroRandom)){
+      k--;
+  }else{
+      arrayBombe.push(numeroRandom);
+  }
+}
+
+console.log(arrayBombe);
+
+
 function play(){
   document.getElementById("griglia").innerHTML = '';
-
-
-
+  
   function creazioneQuadrato(){
     const div = document.createElement("div");
     div.classList.add("quadrato");
